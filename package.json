@@ -1,0 +1,39 @@
+{
+  "scripts": {
+    "dev": "node server.js",
+    "build": "next build",
+    "start": "NODE_ENV=production node server.js",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "dependencies": {
+    "@storybook/cli": "^3.4.8",
+    "express": "^4.16.3",
+    "isomorphic-unfetch": "^2.0.0",
+    "next": "^6.1.1",
+    "next-redux-wrapper": "^2.0.0-beta.6",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-observable": "^1.0.0",
+    "rxjs": "^6.2.1",
+    "rxjs-compat": "^6.2.1",
+    "styled-components": "^3.3.3",
+    "superagent": "^3.8.3",
+    "universal-rx-request": "^1.0.3"
+  },
+  "name": "next_new",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Paul Huang",
+  "license": "MIT",
+  "devDependencies": {
+    "@storybook/addon-actions": "^3.4.8",
+    "@storybook/addon-links": "^3.4.8",
+    "@storybook/addons": "^3.4.8",
+    "@storybook/react": "^3.4.8",
+    "babel-core": "^6.26.3"
+  }
+}
