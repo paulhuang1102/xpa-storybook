@@ -2,12 +2,7 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { linkTo } from '@storybook/addon-links';
-
-import { Welcome } from '@storybook/react/demo';
 import { WGbutton } from '../widgets/button';
-
-storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
 storiesOf('Button', module)
   .add('primary', () => <WGbutton type="primary" onClick={action('on-click')}>Button</WGbutton>)

@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Toggle from '../components/toggle/toggle';
+import ToggleControl from '../components/toggleControl/toggleControl';
 
 const list = [
     'First',
@@ -8,12 +9,18 @@ const list = [
     'Third'
 ]
 
-const selected = 2;
+const selected = 1;
 
 const toggleProps = {
     list,
-    selected
+    active: true
 }
 
 storiesOf('Toggle', module)
-    .add('normal', () => <Toggle {...toggleProps} />)
+    .add('simple', () => <Toggle {...toggleProps} />)
+    .add('withSelected', () => <Toggle {...toggleProps} selected={selected} />)
+    .add('withControl', () => (
+        <ToggleControl>
+            {(props) => <Toggle list={list} active={props.toggle} action={props.action} />}
+        </ToggleControl>
+    ));

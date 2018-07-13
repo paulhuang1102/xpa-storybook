@@ -1,26 +1,43 @@
 import React from 'react';
 import PropTypes from 'prop-types'
-import { SCtoggleContainer } from './style';
+import { SCtoggleContainer, SCtoggleList } from './style';
 
 class Toggle extends React.Component
 {
     constructor(props)
     {
         super(props);
-        this.state = {}
+        this.state = {
+            selected: props.selected
+        }
     }
 
     renderList()
     {
-        return this.props.list.map((l, i) => (
-            <div key={i}>{l}</div>
+        const { list, action } = this.props;
+        const { selected } = this.state;
+        return list.map((item, i) => (
+            <SCtoggleList
+                key={i}
+                selected={selected === i}
+                onClick={() =>
+                {
+                    action(item);
+                    this.setState({
+                        selected: i
+                    });
+                }
+            }>
+                {item}
+            </SCtoggleList>
         ));
     }
 
     render()
     {
+        const { bgc, active, list } = this.props;
         return (
-            <SCtoggleContainer bgc={this.props.bgc}>
+            <SCtoggleContainer bgc={bgc} active={active} length={list.length}>
                 {this.renderList()}
             </SCtoggleContainer>
         );
@@ -28,11 +45,15 @@ class Toggle extends React.Component
 }
 
 Toggle.defaultProps = {
-    bgc: ''
+    bgc: '',
+    selected: -1,
+    active: true
 }
 
 Toggle.propTypes = {
-    bgc: PropTypes.string
+    bgc: PropTypes.string,
+    selected: PropTypes.number,
+    active: PropTypes.bool
 }
 
 export default Toggle;

@@ -6,21 +6,41 @@ export const SCtoggleContainer = styled.div`
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.5);
     display: inline-block;
     color: #8a8a8a;
-
-    > div
+    overflow: hidden;
+    transition: .3s;
+    height: ${(props) =>
     {
-        cursor: pointer;
-        padding: 0.25rem 1rem;
-
-        &:last-child
+        if (!props.active)
         {
-            margin-bottom: 0;
+            return '0';
         }
-
-        &:hover
+        else
         {
-            background-color: #000;
-            color: #7166fc;
+            return `${props.length * 1.5}rem`;
         }
+    }};
+`
+
+export const SCtoggleList = styled.div`
+    cursor: pointer;
+    padding: 0.25rem 1rem;
+    text-align: right;
+    line-height: 1rem;
+    height: 1rem;
+
+    ${(props) =>
+    {
+        return props.selected ? 'color: #fff' : '';
+    }}
+
+    &:last-child
+    {
+        margin-bottom: 0;
+    }
+
+    &:hover
+    {
+        background-color: #000;
+        color: #7166fc;
     }
 `
