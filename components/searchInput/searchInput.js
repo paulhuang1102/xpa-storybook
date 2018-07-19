@@ -15,7 +15,7 @@ class searchInput extends React.Component
         return (
             <SCinutContainer>
                 <WGinput />
-                <img src="/static/icon/ic-search.svg" alt="search"/>
+                <img src="/static/icon/ic-search.svg" alt="search" onClick={this.props.search}/>
             </SCinutContainer>
         );
     }
