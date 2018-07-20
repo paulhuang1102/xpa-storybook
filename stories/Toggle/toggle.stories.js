@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, text, array } from '@storybook/addon-knobs/react';
-import Toggle from '../components/toggle/toggle';
-import ToggleControl from '../components/toggleControl/toggleControl';
+import Toggle from '../../components/toggle/toggle';
+import ToggleControl from '../../components/toggleControl/toggleControl';
 
 const selected = 1;
 const list = [

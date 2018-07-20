@@ -1,8 +1,7 @@
 import React from 'react';
-
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { WGbutton } from '../widgets/button';
+import { WGbutton } from '../../widgets/button';
 
 storiesOf('Button', module)
   .add('primary', () => <WGbutton type="primary" onClick={action('on-click')}>Button</WGbutton>)
