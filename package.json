@@ -6,7 +6,8 @@
     "storybook": "start-storybook -s ./ -p 6006",
     "build-storybook": "build-storybook",
     "test:generate-output": "jest --json --outputFile=.jest-test-results.json",
-    "test": "jest"
+    "test": "jest",
+    "storybook-test": "yarn storybook && yarn test:generate-output"
   },
   "dependencies": {
     "express": "^4.16.3",
@@ -31,17 +32,20 @@
   "author": "Paul Huang",
   "license": "MIT",
   "devDependencies": {
-    "@storybook/addon-actions": "^3.4.8",
-    "@storybook/addon-jest": "^3.4.8",
-    "@storybook/addon-knobs": "^3.4.8",
-    "@storybook/addon-links": "^3.4.8",
-    "@storybook/addon-notes": "^3.4.8",
-    "@storybook/addons": "^3.4.8",
-    "@storybook/cli": "^3.4.8",
-    "@storybook/react": "^3.4.8",
+    "@storybook/addon-actions": "^4.0.0-alpha.14",
+    "@storybook/addon-jest": "^4.0.0-alpha.14",
+    "@storybook/addon-knobs": "^4.0.0-alpha.14",
+    "@storybook/addon-links": "^4.0.0-alpha.14",
+    "@storybook/addon-notes": "^4.0.0-alpha.14",
+    "@storybook/addon-storysource": "^4.0.0-alpha.14",
+    "@storybook/addon-viewport": "^4.0.0-alpha.14",
+    "@storybook/addons": "^4.0.0-alpha.14",
+    "@storybook/cli": "^4.0.0-alpha.14",
+    "@storybook/react": "^4.0.0-alpha.14",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "jest": "^23.4.1",
     "react-test-renderer": "^16.4.1"
   }
